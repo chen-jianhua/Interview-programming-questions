@@ -59,11 +59,14 @@ public class zhihu {
         }
 
         // 将剩余部分直接连接到合并后的链表
-        if (l1 != null) {
-            current.next = l1;
-        } else {
-            current.next = l2;
-        }
+//        if (l1 != null) {
+//            current.next = l1;
+//        } else {
+//            current.next = l2;
+//        }
+        //if-else 优化
+        current.next = l1 != null ? l1 : l2;
+
 
         return dummy.next; // 返回合并后的链表，不包括虚拟头节点
     }
